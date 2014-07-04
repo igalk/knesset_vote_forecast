@@ -10,3 +10,4 @@
   _.each($scope.votes, (item) ->
     item.color = if item.prediction > 50 then 'green' else 'red'
   )
+  
