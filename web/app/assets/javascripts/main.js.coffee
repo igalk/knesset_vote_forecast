@@ -4,14 +4,11 @@
 #= require_self
 #= require_tree ./controllers/main
 
-# Creates new Angular module called 'Blog'
+# Creates new Angular module called 'Forecast'
 Forecast = angular.module('Forecast', ['ngRoute'])
 
 # Sets up routing
 Forecast.config(['$routeProvider', ($routeProvider) ->
-  # Route for '/post'
-  $routeProvider.when('/post', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
-
   # Default
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' })
 ])
