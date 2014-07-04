@@ -1,0 +1,8 @@
+<h1 class="header">הצעות חוק</h1>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="item in votes">
+        <p class="title">{{ item.title }}</p>
+        <p>{{ item.stage }}</p>
+        <span class="prediction {{ item.color }}">{{ item.prediction }}%</span>
+    </li>
+</ul>
