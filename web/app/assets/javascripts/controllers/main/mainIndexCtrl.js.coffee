@@ -1,13 +1,12 @@
-@IndexCtrl = ($scope) ->
-  $scope.votes = [
-      { title: "חוק הגנת הצרכן תיקון - פנייה מקדימה בעסקת מכר מרחוק", state: "עברה קריאה טרומית", prediction: 80 },
-      { title: "חוק המקרקעין (חיזוק בתים משותפים מפני רעידות אדמה) תיקון - סידור חלוף ארעי", state: "הוסבה לנושא לדיון", prediction: 10 },
-      { title: "חוק שכר מינימום תיקון - שכר מינימום לעובד שטרם מלאו לו 18 שנים", state: "הוסבה לנושא לדיון", prediction: 90 },
-      { title: "חוק הפסיכולוגים תיקון - הפרת חובת דיווח ופרסום החלטות ועדת המשמעת", state: "עברה קריאה טרומית", prediction: 40 },
-      { title: "חוק הביטוח הלאומי תיקון - שיעור ההטבה לפי הסכם בדבר גמלת ניידות", state: "נפלה בקריאה טרומית", prediction: 0 },
-    ]
-
-  _.each($scope.votes, (item) ->
-    item.color = if item.prediction > 50 then 'green' else 'red'
-  )
-  
+@IndexCtrl = ($scope, $location, $http) ->
+  loadPredictions = ->
+    $http.get('./bill_predictions').success( (data) ->
+      $scope.bill_predictions = data
+      _.each($scope.bill_predictions, (item) ->
+        item.color = if item.prediction > 50 then 'green' else 'red'
+      )
+      console.log('Successfully loaded bill predictions.')
+    ).error( ->
+      console.error('Failed to load bill prediction.')
+    )
+  loadPredictions()
