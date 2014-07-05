@@ -4,6 +4,7 @@
     { title: "חוק שכר מינימום תיקון - שכר מינימום לעובד שטרם מלאו לו 18 שנים", state: "הוסבה לנושא לדיון" },
     { title: "חוק הפסיכולוגים תיקון - הפרת חובת דיווח ופרסום החלטות ועדת המשמעת", state: "עברה קריאה טרומית" },
     { title: "חוק הביטוח הלאומי תיקון - שיעור ההטבה לפי הסכם בדבר גמלת ניידות", state: "נפלה בקריאה טרומית" }
-].each do |params|
-  Bill.create!(params)
+].each_with_index do |params, i|
+  b = Bill.create!(params)
+  b.create_bill_prediction(prediction: ((i * 20) % 101))
 end
