@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+[
+    { title: "חוק הגנת הצרכן תיקון - פנייה מקדימה בעסקת מכר מרחוק", state: "עברה קריאה טרומית" },
+    { title: "חוק המקרקעין (חיזוק בתים משותפים מפני רעידות אדמה) תיקון - סידור חלוף ארעי", state: "הוסבה לנושא לדיון" },
+    { title: "חוק שכר מינימום תיקון - שכר מינימום לעובד שטרם מלאו לו 18 שנים", state: "הוסבה לנושא לדיון" },
+    { title: "חוק הפסיכולוגים תיקון - הפרת חובת דיווח ופרסום החלטות ועדת המשמעת", state: "עברה קריאה טרומית" },
+    { title: "חוק הביטוח הלאומי תיקון - שיעור ההטבה לפי הסכם בדבר גמלת ניידות", state: "נפלה בקריאה טרומית" }
+].each do |params|
+  Bill.create!(params)
+end
