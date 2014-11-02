@@ -45,6 +45,18 @@ gem 'orly', group: :development
 group :test do
   gem 'factory_girl_rails', require: false
   gem 'rspec-rails'
+
+  gem 'capybara'
+  #gem 'capybara-webkit'
+  gem 'konacha'
+  gem 'sinon-rails'
+
+  gem 'guard-konacha'
+  gem 'guard'
+  gem 'spork'
+  gem 'database_cleaner'
+  gem 'timecop'
+  gem 'simplecov'
 end
 
 # Use ActiveModel has_secure_password
