@@ -46,12 +46,12 @@ group :test do
   gem 'factory_girl_rails', require: false
   gem 'rspec-rails'
 
-  gem 'capybara'
+  gem 'capybara', '>= 2.4.4'
   #gem 'capybara-webkit'
-  gem 'konacha'
+  gem 'konacha', '>= 3.3.0'
   gem 'sinon-rails'
 
-  gem 'guard-konacha'
+  gem 'guard-konacha', '>= 1.0.5'
   gem 'guard'
   gem 'spork'
   gem 'database_cleaner'
